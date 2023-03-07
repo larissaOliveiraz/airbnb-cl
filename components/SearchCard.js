@@ -1,6 +1,7 @@
 import { HeartIcon, StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
+import clsx from "clsx";
 
 export default function SearchCard({
   img,
@@ -12,11 +13,24 @@ export default function SearchCard({
   total,
 }) {
   return (
-    <div className="flex px-2 py-5 duration-200 ease-out transform border-b cursor-pointer hover:bg-gray-50 first:border-t hover:shadow-xl trasition hover:opacity-95">
-      <div className="relative flex-shrink-0 w-40 h-24 md:h-52 md:w-80">
+    <div
+      className={clsx(
+        "flex px-2 py-5",
+        "trasition duration-200 ease-out transform",
+        "border-b",
+        "cursor-pointer",
+        "hover:bg-gray-50 first:border-t hover:shadow-xl  hover:opacity-95"
+      )}
+    >
+      <div
+        className={clsx(
+          "relative flex-shrink-0",
+          "w-40 h-24",
+          "md:h-52 md:w-80"
+        )}
+      >
         <Image src={img} fill alt="" className="object-cover rounded-2xl" />
       </div>
-
       <div className="flex flex-col flex-grow pl-5">
         <div className="flex justify-between">
           <p>{location}</p>
